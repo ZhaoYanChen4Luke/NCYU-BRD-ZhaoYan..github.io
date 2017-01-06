@@ -24,7 +24,7 @@
 [參考老師的網址]https://gist.github.com/mutolisp/d613948fbf91ae29a532dc672b6f36f3
 
 ## data transformation
-'''r
+```r
 # 使用 dplyr 和 tidyr
 # install dplyr and tidyr first
 install.packages(c('dplyr', 'tidyr', 'dtplyr'))
@@ -150,3 +150,4 @@ f1 <- filter(cwb10.tbl, year == 2006)
 group_by(f1, year, month) %>% 
   summarise(Tavg = mean(TX01, na.rm = T),
             Precp = sum(PP01, na.rm = T))
+```
