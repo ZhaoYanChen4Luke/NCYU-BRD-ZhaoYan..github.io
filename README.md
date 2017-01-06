@@ -34,4 +34,113 @@ author :
 若有悄悄話歡迎隨時密我，這裡是專屬你的天空
 阿延的繁星夜空下次見 掰掰
 
+2016.12.30
+#參考老師的網址
+https://gist.github.com/mutolisp/d6cc6db990c9e50eb0530bad49a3ce40
+Quick-R graphics 網址
+http://www.statmethods.net/graphs/
+ 
+data (iris)
+
+#使用iris資料繪圖
+#histogram 柱狀圖
+
+sepalLength <- iris$Sepal.Length
+hist(sepalLength , breaks = 15)
+
+#點圖
+#R plot pch 可以搜尋得到點樣子的種類
+plot(sepalLength)
+plot(sepalLength , type = 'p', pch = 19) 
+
+# 1.1 改變顏色和符號(pch)
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'green')
+# 1.2 加上 title
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'red', 
+     main = 'Sepal Length (cm)')
+# 加上 x & y labels
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'red', 
+     main = 'Iris data — sepal length',
+     xlab = 'index\n(sequence)', ylab = 'Sepal length (cm)')
+# 加上文字(text)
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'red', 
+     main = 'Iris data — sepal length',
+     xlab = 'index', ylab = 'Sepal length (cm)')
+# \n 代表換行
+text(5,7,'Iris\n data \nexample')
+# 加上矩型
+rect(xleft = 5, ybottom = 6, 
+     xright = 25, ytop = 7)
+
+# 控制 axes
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'red', 
+     main = 'Sepal Length (cm)', axes = FALSE)
+# side 1, 2, 3, 4 分別代表下左上右
+axis(side = 2)
+axis(side = 4)
+
+# 開啟繪圖裝置，windows 系統請用 windows()
+# MacOS 請使用 quartz()，GNU/Linux 可使用 x11()
+# 這些會直接於螢幕上繪出
+# 如果要輸出成不同格式，要使用 png, pdf, etc.
+pdf(file = '~/Desktop/test.pdf')
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'red', 
+     main = 'Iris data — sepal length',
+     xlab = 'index\n(sequence)', 
+     ylab = 'Sepal length (cm)')
+dev.off()
+
+# 如果碰到中文的問題，可以使用 Cairo 套件來解決
+library(Cairo)
+CairoFonts(regular = "Noto Sans T Chinese:style=Light", bold = "Noto Sans T Chinese:style=Regular")
+Cairo(1200, 1200, file ='/tmp/test_cairo.pdf', 
+      type = 'pdf',
+      pointsize=8, dpi = 150)
+plot(sepalLength, type = 'p',
+     pch = 19, col = 'red', 
+     main = '鴛尾花資料集',
+     xlab = 'index', 
+     ylab = '萼片長度 (cm)')
+dev.off()
+
+# boxplot
+# 使用 boxplot 繪製 sepal length
+boxplot(sepalLength)
+# 使用 boxplot 繪製 sepal length, setal width,
+# petal length 以及 petal width
+boxplot(iris[,1:4])
+boxplot(iris[,1:4], col = '#ff0000')
+
+# 調整 margin
+par(mar = c(3, 4, 5, 3) )
+boxplot(iris[,1:4], lwd = 0.8, col = '#ff0000')
+
+
+# 把圖組合起來
+# 可以使用 graphical parameter mfrow
+# 或是用 layout 來控制
+par(mfrow = c(2,1))
+par(mar = c(2,2,2,2)+0.5 )
+boxplot(iris[,1:4]*rnorm(1), lwd = 0.8, col = '#ff0000', main = 'Species A')
+boxplot(iris[,1:4]*rnorm(1), lwd = 0.8, col = 'darkgreen', main = 'Species B')
+
+#加上趨勢線
+-------
+plot(iris$Sepal.Width, iris$Sepal.Length,
+     xlab = 'Sepal.Length' ,
+     ylab = 'Sepal.Width')
+lm.results <- lm(Sepal.Width-Sepal.Length, data=iris)
+abline(lm.results)
+abline(h=4.5, lty = 4)
+legend(4.5, legend = 'a')
+-----
+# 折線圖
+plot(sepalLength, type = 'l',
+     pch = 19, col = 'green')
 
