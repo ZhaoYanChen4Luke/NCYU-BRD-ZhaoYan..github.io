@@ -43,8 +43,10 @@ devtools::install_github('mutolisp/twmap')
 # dplyr "tibble" (tbl) format is more readable than built-in data.frame
 # tbl 格式
 ---R
+
 iris.tbl <- dplyr::tbl_df(iris)
 iris.tbl
+
 ---
 # 簡單看一下 tbl (類似 summary)
 ---R
