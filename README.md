@@ -39,7 +39,8 @@ devtools::install_github('rstudio/EDAWR')
 # 上，就可以用下列的方式安裝
 #
 devtools::install_github('mutolisp/twmap')
-'''
+```
+```r
 # fundamental syntax of dplyr
 # dplyr "tibble" (tbl) format is more readable than built-in data.frame
 # tbl 格式
@@ -48,7 +49,8 @@ iris.tbl <- dplyr::tbl_df(iris)
 iris.tbl
 # 簡單看一下 tbl (類似 summary)
 dplyr::glimpse(iris.tbl)
-
+```
+```r
 # 另一個 dplyr 特殊的符號 %>%
 # 把左邊的 object 當成是右邊 function 的
 # 第一個參數(argument)
@@ -59,7 +61,7 @@ iris %>% group_by(Species) %>%
   summarise(avg = mean(Sepal.Length))
 
 dplyr::group_by(iris, Species)
-
+```
 # dplyr::summarise() 
 summarise(mtcars, mean(hp))
 
