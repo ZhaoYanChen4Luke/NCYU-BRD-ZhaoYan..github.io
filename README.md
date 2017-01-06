@@ -35,20 +35,19 @@ require(dtplyr)
 devtools::install_github('rstudio/EDAWR')
 # install_github 可以直接從 github 安裝
 # 例如，若有個 r package 放在
-# http://github.com/mutolisp/twmap 
-# 上，就可以用下列的方式安裝
-#
+http://github.com/mutolisp/twmap 上，就可以用下列的方式安裝
+
 devtools::install_github('mutolisp/twmap')
 
 # fundamental syntax of dplyr
 # dplyr "tibble" (tbl) format is more readable than built-in data.frame
 # tbl 格式
----
+---R
 iris.tbl <- dplyr::tbl_df(iris)
 iris.tbl
 ---
 # 簡單看一下 tbl (類似 summary)
----
+---R
 dplyr::glimpse(iris.tbl)
 ---
 # 另一個 dplyr 特殊的符號 %>%
