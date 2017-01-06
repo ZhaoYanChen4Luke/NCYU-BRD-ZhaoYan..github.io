@@ -1,10 +1,4 @@
 # NCYU-BRD-ZhaoYan..github.io
-
----
-layout: default
-title: WoW
-subTitle: 昭延陳
----
   
   
 ## 一、	個人特質及生活態度
