@@ -23,7 +23,7 @@
 
 
 使用 img 語法縮放圖片
-<img src="https://github.com/NCYUBRD/demoweb.github.io" width="200">
+<img src="https://github.com/NCYUBRD/demoweb.github.io/blob/master/Dao-HB086.jpg" width="200">
 
 | 姓名 |  年級  | 分數 |
 |-----|--------|-----|
