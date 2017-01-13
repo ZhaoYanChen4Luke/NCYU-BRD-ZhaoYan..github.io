@@ -23,9 +23,7 @@
 
 
 使用 img 語法縮放圖片
-<img src="demoweb.github.io/Dao-HB086.jpg" width="300">
-
-
+<img src="https://github.com/NCYUBRD/demoweb.github.io/blob/master/Dao-HB086.jpg" width="300">
 
 
 
